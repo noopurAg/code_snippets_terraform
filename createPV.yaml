@@ -1,0 +1,23 @@
+{
+  "apiVersion": "v1",
+  "kind": "PersistentVolume",
+  "metadata": {
+   "name": "<pvname>",
+    "labels": {
+     "assign-to": "data-stor"
+    }
+  },
+  "spec": {
+   "capacity": {
+      "storage": "<pvsize>Gi"
+    },
+    "nfs": {
+      "server": "<serverip>",
+      "path": "<nfspath>"
+    },
+    "accessModes": [
+      "ReadWriteOnce"
+    ],
+    "persistentVolumeReclaimPolicy": "Retain"
+  }
+}
